@@ -53,9 +53,10 @@ int encode_by_sum(size_t v, string &ret) {
           goto exit;
       }
     }
+exit:
+      continue;
   }
 
-exit:
   if (num_parts == 1) {
     ret = s;
   } else {
