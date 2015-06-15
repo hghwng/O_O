@@ -34,28 +34,25 @@ int encode_by_sum(size_t v, string &ret) {
   while (v) {
     if (num_parts++) s += " o_O ";
 
-    for (;;) {
-      auto r = rand() % 3;
-      switch (r) {
-        case 0: // 1
-          s += "_";
-          v -= 1;
-          goto exit;
-        case 1: // 2
-          if (v < 2) break;
-          s += "__";
-          v -= 2;
-          goto exit;
-        case 2: // 4
-          if (v < 4) break;
-          s += "___";
-          v -= 4;
-          goto exit;
-      }
+    auto r = rand() % 3;
+    switch (r) {
+      case 0: // 1
+        s += "_";
+        v -= 1;
+        break;
+      case 1: // 2
+        if (v < 2) break;
+        s += "__";
+        v -= 2;
+        break;
+      case 2: // 4
+        if (v < 4) break;
+        s += "___";
+        v -= 4;
+        break;
     }
   }
 
-exit:
   if (num_parts == 1) {
     ret = s;
   } else {
