@@ -157,7 +157,8 @@ int main(int argc, char *argv[]) {
 
   srand(time(0));
   string src = argv[1];
-  string dst = encode_string(src);
+  string dst = encode_string(src + "\n");
+
   cout << kStub;
   cout << "o_o" << endl;
   cout << dst;
